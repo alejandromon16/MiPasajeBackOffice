@@ -1,0 +1,53 @@
+{
+	"name": "mipasajebackoffice",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "svelte-kit package",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync",
+		"test": "playwright test",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.22.2",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@types/cookie": "^0.5.1",
+		"@types/validator": "^13.7.4",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"@windicss/plugin-heropatterns": "^0.0.8",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.6",
+		"svelte-windicss-preprocess": "^4.2.8",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.4",
+		"vite": "^2.9.13"
+	},
+	"type": "module",
+	"dependencies": {
+		"@macfja/svelte-persistent-store": "^1.3.0",
+		"@types/js-cookie": "^3.0.2",
+		"@windicss/plugin-icons": "^1.0.2",
+		"cookie": "^0.5.0",
+		"daisyui": "^2.19.0",
+		"es6-shim": "^0.35.6",
+		"graphql-request": "^4.3.0",
+		"js-cookie": "^3.0.1",
+		"svelte-paginate": "^0.0.1",
+		"svelte-select": "^4.4.7",
+		"validator": "^13.7.0",
+		"validator.ts": "^0.2.2"
+	}
+}
