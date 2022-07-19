@@ -48,9 +48,9 @@ export const createUser = (user:IUser) => {
             mutation{
                 addUser(
                     input:{
-                        name: "${data.name}",
-                        email: "${data.email}",
-                        password: "${data.password}",
+                        name: "${user.name}",
+                        email: "${user.email}",
+                        password: "${user.password}",
                         role: ADMIN
                     }
                 ){
@@ -64,9 +64,9 @@ export const createUser = (user:IUser) => {
             mutation{
                 addUser(
                     input:{
-                        name: "${data.name}",
-                        email: "${data.email}",
-                        password: "${data.password}",
+                        name: "${user.name}",
+                        email: "${user.email}",
+                        password: "${user.password}",
                         role: CLIENT
                     }
                 ){

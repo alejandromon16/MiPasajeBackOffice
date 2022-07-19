@@ -64,7 +64,7 @@ export default class UsersManagerController extends UsersManager{
         return this.errors;
     }
 
-    remove(){
-        return this.userManagerService.deleteUser(this.id);
+    async delete(){
+        return await this.userManagerService.deleteUser(this.id);
     }
 }

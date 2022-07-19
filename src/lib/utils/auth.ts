@@ -15,7 +15,7 @@ export const getCookieItem = async (key: string) => {
 
 export const logout = async () => {
     await removeCookie('token')
-    await removeCookie('user')
+    await removeCookie('id')
     await removeCookie('role')
     if (browser) {
         window.location.replace('/')

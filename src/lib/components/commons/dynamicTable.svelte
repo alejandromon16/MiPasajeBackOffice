@@ -4,10 +4,10 @@
   import { createEventDispatcher } from 'svelte';
   import ModalDelete from './modal.svelte';
 
-	export let values;
+	export let values = [];
 	export let titles;
-  export let category;
-  let dispatch = createEventDispatcher();
+    export let category;
+    let dispatch = createEventDispatcher();
 	let filterValues = [];
 	let currentPage = 1;
 	let pageSize = 7;
@@ -101,7 +101,10 @@
 														</svg>
 												</li>
 												<li>
-														><ModalDelete {category} on:click={(value) => dispatch('deleteItem',value)}/>
+														><ModalDelete {category} idTagName={value.email} on:click={() => {
+															dispatch('deleteItem',value._id);
+															console.log('this is value', value);
+															}}/>
 												</li>
 											</ul>
 										</div>
