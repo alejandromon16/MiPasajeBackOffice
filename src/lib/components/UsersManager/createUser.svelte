@@ -28,9 +28,7 @@
             }
         }else{
             errors =  usersManager.getErrors();;
-            console.log(errors)
         }
-        
     };
 
 </script>

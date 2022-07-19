@@ -1,9 +1,18 @@
 <script>
     export let category = '';
+	export let idTagName;
+
+	const check = () => {
+        document.getElementById(idTagName).checked = true;
+    };
+
+    const uncheck = () => {
+        document.getElementById(idTagName).checked = false;
+    };
 </script>
 
 <!-- The button to open modal -->
-<label for="my-modal" class="modal-button flex">
+<label for={idTagName} class="modal-button flex">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		class="h-6 w-6 mr-3"
@@ -22,7 +31,7 @@
 </label>
 
 <!-- Put this part before </body> tag -->
-<input type="checkbox" id="my-modal" class="modal-toggle" />
+<input type="checkbox" id={idTagName} class="modal-toggle" />
 <div class="modal">
 	<div class="modal-box">
 		<svg
@@ -42,8 +51,8 @@
 			Estas seguro que deseas borrar este {category}?
 		</h3>
 		<div class="modal-action flex pt-5">
-			<label on:click class="btn btn-primary">Si, estoy seguro</label>
-			<label for="my-modal" class="btn btn-outline">No, cancelar</label>
+			<label on:click on:click={() => uncheck()} class="btn btn-primary">Si, estoy seguro</label>
+			<label for={idTagName} class="btn btn-outline">No, cancelar</label>
 		</div>
 	</div>
 </div>

@@ -15,8 +15,12 @@
 
     let usersManager = new UsersManagerController(new UsersManagerService)
 
-    const deleteItem = (e) => {
-        console.log('this is e', e)
+    const deleteItem = async (idItem) => {
+        usersManager.id = idItem;
+        const res = await usersManager.delete();
+        if(res){
+            dispatch('userDeleted')
+        }
     }
 </script>
 
@@ -27,4 +31,4 @@
     </div>
 </div>
 
-<Table {titles} {values} {category} on:deleteItem={(e) => deleteItem(e) }/>
+<Table {titles} {values} {category} on:deleteItem={(e) => deleteItem(e.detail) }/>

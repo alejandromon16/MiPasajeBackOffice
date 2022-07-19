@@ -3,12 +3,15 @@
     import { getAllUsers } from '@components/UsersManager/queries';
   
     export async function load({stuff}){
-        if(!stuff.userRole === "ADMIN" || !stuff.userRole ==="SUPER_ADMIN"){
+        console.log('this is stuff', stuff);
+        if(stuff.userRole === "CLIENT" || stuff.userRole === "ADMIN" || stuff.userRole === "REGULAR"){
             return{
                 status: 302,
                 redirect: '/cliente/'
             }
-        }else if(stuff.userRole == "SUPER_ADMIN"){
+        }
+        
+        if(stuff.userRole == "SUPER_ADMIN"){
             const { data : { users: res}} = await api(getAllUsers())
             return {
                 props: {

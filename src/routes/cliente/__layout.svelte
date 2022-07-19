@@ -4,8 +4,8 @@
     import { logout } from '@utils/auth';
   
     export async function load({session}){
-      console.log(session)
-      const {data : { validToken : res}} = await api(getValidToken(session.token))
+      console.log(session);
+      const {data : { validToken : res}} = await api(getValidToken(session.token));
       
       if(!session.id || !res){
         logout()
@@ -13,8 +13,10 @@
           status: 302,
           redirect: '/'
         }
+
       }else{
         const { data: { giveMeRole: res2}} = await api(getRole(session.id))
+        console.log(res2)
         return{
           stuff: { userRole: res2}
         }

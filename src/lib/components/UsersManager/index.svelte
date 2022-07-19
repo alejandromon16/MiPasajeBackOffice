@@ -19,5 +19,6 @@
 <svelte:component 
     on:createUser={() => component=CreateUser}
     on:userCreated={() => goViewUsers()}
+    on:userDeleted={() => goViewUsers()}
     on:cancelCreateUser={() => goViewUsers()}
     this={component} {values} {titles} {title} {category}/>
